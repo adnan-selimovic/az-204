@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0
 RUN mkdir /app
 WORKDIR /app
 
-COPY ./HelloWorld/bin/Release/net6.0/publish ./
+COPY ./bin/Release/net6.0/publish ./
 
 EXPOSE 80
 ENTRYPOINT [ "dotnet", "HelloWorld.dll" ]
