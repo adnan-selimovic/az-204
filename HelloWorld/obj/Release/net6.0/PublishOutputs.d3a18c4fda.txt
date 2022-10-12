@@ -1,5 +1,0 @@
-C:\demotest\az-204\HelloWorld\bin\Release\net6.0\publish\HelloWorld.exe
-C:\demotest\az-204\HelloWorld\bin\Release\net6.0\publish\HelloWorld.dll
-C:\demotest\az-204\HelloWorld\bin\Release\net6.0\publish\HelloWorld.deps.json
-C:\demotest\az-204\HelloWorld\bin\Release\net6.0\publish\HelloWorld.runtimeconfig.json
-C:\demotest\az-204\HelloWorld\bin\Release\net6.0\publish\HelloWorld.pdb
