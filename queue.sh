@@ -14,4 +14,4 @@ az storage message get --queue-name mysampleqeueu29880
 az storage message delete --id <guid> --pop-receipt <POP RECEIPT> --queue-name mysampleqeueu29880
 
 # env za SDK
-export AZURE_STORAGE_CONNECTION_STRING="DefaultEndpointsProtocol=https;AccountName=csb100320023342203d;AccountKey=osBOmXCJLxrxTJeGnEhO697jCIrqE0lCzsXytSKCPLP/FW7X1RxM8/axhweRbLeeTTqm5uk1xILG+AStLGEKFQ==;EndpointSuffix=core.windows.net"
+export AZURE_STORAGE_CONNECTION_STRING="DefaultEndpointsProtocol=https;AccountName=csb100320023342203d;AccountKey=;EndpointSuffix=core.windows.net"
