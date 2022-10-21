@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/9457e63e-f78f-43ca-bc0d-f7c389e8ea6b/AppServices/subscriptions/9457e63e-f78f-43ca-bc0d-f7c389e8ea6b/resourceGroups/wiredbrain-rg/providers/Microsoft.Web/sites/wbcoffee",
+    "appService.deploySubpath": "."
+}
