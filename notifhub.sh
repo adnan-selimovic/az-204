@@ -1,0 +1,2 @@
+# Windows device
+NotificationHubClient.SendWindowsNativeNotificationAsync Method
