@@ -8,3 +8,9 @@ az cosmosdb sql database create --account-name pluralsight6831 --name sampledb -
 # create a sql database container
 # container = table
 az cosmosdb sql container create --resource-group adnan.selimovic76_rg_2740 --account-name pluralsight6831 --database-name sampledb --name samplecontainer --partition-key-path "/employeeid"
+
+# update account - locations
+az cosmosdb update \
+ --name "skillcertlabscosmosdb" \ 
+--resource-group "skillcertlabs-rg" \
+ --locations "South Central US"=0 "North Central US"=1 "East US"=2
