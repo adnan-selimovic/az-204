@@ -32,6 +32,9 @@ az role definition list --query "[?roleName == 'Storage Account Contributor']"
   }
 ]
 
+# user-assigned managed identity
+az identity create -g myResourceGroup -n myUserAssignedIdentity
+
 # create a stand alone service principal
 az ad sp create-for-rbac --name dellaterserviceprincipal
 {
@@ -50,3 +53,23 @@ az account get-access-token --resource https://graph.microsoft.com
   "tokenType": "Bearer"
 }
 
+####
+# Azure Key Vault
+####
+New-AzKeyVault -VaultName 'AZ204-Vault' -ResourceGroupName 'rg-204' -Location 'East US'
+az keyvault secret set --name MySecretName --vault-name MyKeyVault --value MyVault
+# enable soft-delete on an existing Vault
+($resource = Get-AzResource -Resource Id (Get-AzKeyVault -VaultName 'kv-az204-demo02').ResourceId)
+Set-AzResource -resourceid $resource.ResourceId -Properties $resource.Properties
+# enable purge protection on an existing Vault (once enabled, it can not be disabled) ista cmd??
+($resource = Get-AzResource -Resource Id (Get-AzKeyVault -VaultName 'kv-az204-demo02').ResourceId)
+Set-AzResource -resourceid $resource.ResourceId -Properties $resource.Properties
+Set-AzKeyVaultAccessPolicy ...
+
+#Enable Azure KV Soft-delete
+($resource = Get-AzResource -Resource Id (Get-AzKeyVault -VaultName 'kv-az204-demo02').ResourceId).Properties | Add-Member
+-MemberType "NoteProperty" -Name "enableSoftDelete" -Value "true"
+Set-AzResource -resourceid $resource.ResourceId -Properties $resource.Properties
+#Enable at the point of creating KV (also purge protection)
+New-AzKeyVault -VaultName 'AZ204-Vault' -ResourceGroupName 'rg-204' -Location 'East US'
+    -EnableSoftDelete "true"
